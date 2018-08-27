@@ -6,7 +6,7 @@ import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
 import { MainComponent } from "./main/main.component";
-import { NavComponent } from "./nav/nav.component";
+import { NavComponent } from "./header/nav/nav.component";
 import { ProductsComponent } from "./main/products/products.component";
 import { DocumentsComponent } from "./main/documents/documents.component";
 
