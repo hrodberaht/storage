@@ -20,4 +20,11 @@ export class ProductDataService {
       }
     });
   }
+
+  updateProduct(product, id) {
+    let index = this.products.findIndex((prod: Product) => {
+      return prod.id === id;
+    });
+    this.products[index] = product;
+  }
 }

@@ -28,7 +28,10 @@ export class ProductDetailComponent implements OnInit {
   }
 
   updateProduct(product) {
+    let id = { id: this.productItem.id };
+    Object.assign(product.value, id); // object dont have id, assign it
     this.productItem = product.value;
+    this.productDataService.updateProduct(product.value, this.productItem.id);
     this.toggleEditingProduct();
   }
 }

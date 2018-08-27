@@ -13,10 +13,11 @@
 </div>
 
 <form (ngSubmit)="updateProduct(f)" #f="ngForm" *ngIf="editingProduct">
+  ID: {{productItem.id}}
   <input [ngModel]="productItem.imgUrl" name="imgUrl" type="text">
-  <input [ngModel]="productItem.name" name="name" type="text" [value]="productItem.name">
-  <input [ngModel]="productItem.price" name="price" type="number" [value]="productItem.price">
-  <input [ngModel]="productItem.ean" name="ean" type="number" [value]="productItem.ean">
+  <input [ngModel]="productItem.name" name="name" type="text">
+  <input [ngModel]="productItem.price" name="price" type="number">
+  <input [ngModel]="productItem.ean" name="ean" type="number">
   <button (click)="toggleEditingProduct()">Cancel</button>
   <button type="submit">Save</button>
 </form>
