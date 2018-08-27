@@ -10,14 +10,25 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class ProductDetailComponent implements OnInit {
   productItem: Product;
+  editingProduct: boolean;
   constructor(
     private productDataService: ProductDataService,
     private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
+    this.editingProduct = false;
     this.route.params.subscribe(x => {
       this.productItem = this.productDataService.getProduct(+x.id);
     });
+  }
+
+  toggleEditingProduct() {
+    this.editingProduct = !this.editingProduct;
+  }
+
+  updateProduct(product) {
+    this.productItem = product.value;
+    this.toggleEditingProduct();
   }
 }

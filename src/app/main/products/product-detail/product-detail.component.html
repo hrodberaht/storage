@@ -1,7 +1,22 @@
-<div>
+<div *ngIf="!editingProduct">
   <img [src]="productItem.imgUrl" [alt]="productItem.name">
   <h2>{{productItem.name}}</h2>
   <h3>Price: {{productItem.price | currency: 'PLN'}}</h3>
   <h5>Ean: {{productItem.ean}}</h5>
-  <button>Edit</button>
+  <button (click)="toggleEditingProduct()">Edit</button>
 </div>
+<div *ngIf="editingProduct">
+  <img [src]="productItem.imgUrl" [alt]="productItem.name">
+
+  <h3>Price: {{productItem.price | currency: 'PLN'}}</h3>
+  <h5>Ean: {{productItem.ean}}</h5>
+</div>
+
+<form (ngSubmit)="updateProduct(f)" #f="ngForm" *ngIf="editingProduct">
+  <input [ngModel]="productItem.imgUrl" name="imgUrl" type="text">
+  <input [ngModel]="productItem.name" name="name" type="text" [value]="productItem.name">
+  <input [ngModel]="productItem.price" name="price" type="number" [value]="productItem.price">
+  <input [ngModel]="productItem.ean" name="ean" type="number" [value]="productItem.ean">
+  <button (click)="toggleEditingProduct()">Cancel</button>
+  <button type="submit">Save</button>
+</form>
