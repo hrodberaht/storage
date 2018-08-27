@@ -1,3 +1,7 @@
-<p>
-  product-detail works!
-</p>
+<div>
+  <img [src]="productItem.imgUrl" [alt]="productItem.name">
+  <h2>{{productItem.name}}</h2>
+  <h3>Price: {{productItem.price | currency: 'PLN'}}</h3>
+  <h5>Ean: {{productItem.ean}}</h5>
+  <button>Edit</button>
+</div>

@@ -12,4 +12,12 @@ export class ProductDataService {
   getProducts() {
     return this.products;
   }
+
+  getProduct(id): Product {
+    return this.products.find((prod: any) => {
+      if (prod.id === id) {
+        return prod;
+      }
+    });
+  }
 }
