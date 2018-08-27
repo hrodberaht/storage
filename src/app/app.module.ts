@@ -13,6 +13,7 @@ import { DocumentsComponent } from "./main/documents/documents.component";
 import { ProductsListComponent } from "./main/products/products-list/products-list.component";
 import { ProductDetailComponent } from "./main/products/product-detail/product-detail.component";
 import { ProductItemComponent } from "./main/products/products-list/product-item/product-item.component";
+import { ProductAddComponent } from './main/products/product-add/product-add.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ProductItemComponent } from "./main/products/products-list/product-item
     DocumentsComponent,
     ProductsListComponent,
     ProductDetailComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    ProductAddComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
