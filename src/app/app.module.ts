@@ -9,6 +9,9 @@ import { MainComponent } from "./main/main.component";
 import { NavComponent } from "./header/nav/nav.component";
 import { ProductsComponent } from "./main/products/products.component";
 import { DocumentsComponent } from "./main/documents/documents.component";
+import { ProductsListComponent } from "./main/products/products-list/products-list.component";
+import { ProductDetailComponent } from "./main/products/product-detail/product-detail.component";
+import { ProductItemComponent } from "./main/products/products-list/product-item/product-item.component";
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { DocumentsComponent } from "./main/documents/documents.component";
     MainComponent,
     NavComponent,
     ProductsComponent,
-    DocumentsComponent
+    DocumentsComponent,
+    ProductsListComponent,
+    ProductDetailComponent,
+    ProductItemComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
