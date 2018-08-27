@@ -1,1 +1,7 @@
-<app-product-item></app-product-item>
+<div>
+  <ol>
+    <li *ngFor="let product of products">
+      <app-product-item [productItem]="product"></app-product-item>
+    </li>
+  </ol>
+</div>
