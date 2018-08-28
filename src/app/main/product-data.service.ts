@@ -21,10 +21,20 @@ export class ProductDataService {
     });
   }
 
+  addProduct(product: Product) {
+    const id = { id: this.getLastId() };
+    Object.assign(product, id);
+    this.products.push(product);
+  }
+
   updateProduct(product, id) {
     let index = this.products.findIndex((prod: Product) => {
       return prod.id === id;
     });
     this.products[index] = product;
+  }
+
+  getLastId(): number {
+    return this.products[this.products.length - 1].id + 1;
   }
 }

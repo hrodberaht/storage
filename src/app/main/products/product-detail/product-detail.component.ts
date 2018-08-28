@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ProductDataService } from "../../product-data.service";
 import { Product } from "../../shared/product.model";
 import { ActivatedRoute } from "@angular/router";
+import { NgForm } from "@angular/forms";
 
 @Component({
   selector: "app-product-detail",
@@ -27,11 +28,11 @@ export class ProductDetailComponent implements OnInit {
     this.editingProduct = !this.editingProduct;
   }
 
-  updateProduct(product) {
-    let id = { id: this.productItem.id };
-    Object.assign(product.value, id); // object dont have id, assign it
-    this.productItem = product.value;
-    this.productDataService.updateProduct(product.value, this.productItem.id);
+  updateProduct(form: NgForm) {
+    const id = { id: this.productItem.id };
+    Object.assign(form.value, id); // object dont have id from form, assign it
+    this.productItem = form.value;
+    this.productDataService.updateProduct(form.value, this.productItem.id);
     this.toggleEditingProduct();
   }
 }

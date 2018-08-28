@@ -1,3 +1,7 @@
-<p>
-  product-add works!
-</p>
+<form (ngSubmit)="addProduct(f)" #f="ngForm">
+  <input ngModel name="imgUrl" type="text">
+  <input ngModel name="name" type="text">
+  <input ngModel name="price" type="number">
+  <input ngModel name="ean" type="number">
+  <button type="submit">Save</button>
+</form>
