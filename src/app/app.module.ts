@@ -13,7 +13,9 @@ import { DocumentsComponent } from "./main/documents/documents.component";
 import { ProductsListComponent } from "./main/products/products-list/products-list.component";
 import { ProductDetailComponent } from "./main/products/product-detail/product-detail.component";
 import { ProductItemComponent } from "./main/products/products-list/product-item/product-item.component";
-import { ProductAddComponent } from './main/products/product-add/product-add.component';
+import { ProductAddComponent } from "./main/products/product-add/product-add.component";
+import { InvoicesListComponent } from "./main/documents/invoices-list/invoices-list.component";
+import { InvoiceAddComponent } from "./main/documents/invoices-list/invoice-add/invoice-add.component";
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { ProductAddComponent } from './main/products/product-add/product-add.com
     ProductsListComponent,
     ProductDetailComponent,
     ProductItemComponent,
-    ProductAddComponent
+    ProductAddComponent,
+    InvoicesListComponent,
+    InvoiceAddComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
