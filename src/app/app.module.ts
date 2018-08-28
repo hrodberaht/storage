@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -33,7 +33,7 @@ import { InvoiceAddComponent } from "./main/documents/invoices-list/invoice-add/
     InvoicesListComponent,
     InvoiceAddComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })

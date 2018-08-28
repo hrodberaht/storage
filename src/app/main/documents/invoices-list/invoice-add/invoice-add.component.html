@@ -1,3 +1,6 @@
-<p>
-  invoice-add works!
-</p>
+<form [formGroup]="invoiceForm" (ngSubmit)="onSubmit()">
+  Supllier:
+  <input type="text" id="supplier" formControlName="supplier"> Number:
+  <input type="text" id="invoiceNumber" formControlName="invoiceNumber">
+  <button type="submit">Save</button>
+</form>

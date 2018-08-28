@@ -9,11 +9,11 @@ export class ProductDataService {
   products: Product[] = PRODUCT;
   constructor() {}
 
-  getProducts() {
+  getProducts(): Product[] {
     return this.products;
   }
 
-  getProduct(id): Product {
+  getProduct(id: number): Product {
     return this.products.find((prod: any) => {
       if (prod.id === id) {
         return prod;
@@ -27,7 +27,7 @@ export class ProductDataService {
     this.products.push(product);
   }
 
-  updateProduct(product, id) {
+  updateProduct(product: Product, id: number): void {
     let index = this.products.findIndex((prod: Product) => {
       return prod.id === id;
     });
