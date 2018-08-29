@@ -28,7 +28,7 @@ export class ProductDataService {
   }
 
   updateProduct(product: Product, id: number): void {
-    let index = this.products.findIndex((prod: Product) => {
+    const index = this.products.findIndex((prod: Product) => {
       return prod.id === id;
     });
     this.products[index] = product;

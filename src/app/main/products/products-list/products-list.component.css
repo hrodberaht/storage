@@ -1,0 +1,10 @@
+ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+li {
+  margin-left: 20px;
+  width: 30%;
+}
