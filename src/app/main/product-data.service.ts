@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { PRODUCT } from "./shared/mock-product";
 import { Product } from "./shared/product.model";
-import { BehaviorSubject, Observable, Subject } from "rxjs";
+import { BehaviorSubject } from "rxjs";
 
 @Injectable({
   providedIn: "root"
@@ -27,7 +27,6 @@ export class ProductDataService {
   }
 
   getProducts() {
-    console.log(this.subject);
     return this.subject;
   }
 

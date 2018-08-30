@@ -9,9 +9,7 @@ import { Product } from "../../shared/product.model";
 export class ProductsListComponent implements OnInit {
   @Input()
   products;
-  constructor() {
-    console.log("from products list" + this.products);
-  }
+  constructor() {}
 
   ngOnInit() {}
 }
