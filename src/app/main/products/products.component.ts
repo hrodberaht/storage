@@ -8,10 +8,12 @@ import { Product } from "../shared/product.model";
   styleUrls: ["./products.component.css"]
 })
 export class ProductsComponent implements OnInit {
-  productsData: Product[];
+  productsData = null;
   constructor(private productDataService: ProductDataService) {}
-
   ngOnInit() {
-    this.productsData = this.productDataService.getProducts();
+    this.productDataService.getProducts().subscribe(prod => {
+      return (this.productsData = prod);
+    });
+    console.log(this.productsData);
   }
 }

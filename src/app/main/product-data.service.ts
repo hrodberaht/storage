@@ -1,16 +1,34 @@
 import { Injectable } from "@angular/core";
 import { PRODUCT } from "./shared/mock-product";
 import { Product } from "./shared/product.model";
+import { BehaviorSubject, Observable, Subject } from "rxjs";
 
 @Injectable({
   providedIn: "root"
 })
 export class ProductDataService {
   products: Product[] = PRODUCT;
-  constructor() {}
+  subject = new BehaviorSubject<Product[]>(this.products);
 
-  getProducts(): Product[] {
-    return this.products;
+  constructor() {
+    setTimeout(() => {
+      this.subject.next(
+        (this.products = [
+          {
+            id: 13,
+            name: "RxJS",
+            ean: 45345345,
+            price: 12.5,
+            imgUrl: "string"
+          }
+        ])
+      );
+    }, 5000);
+  }
+
+  getProducts() {
+    console.log(this.subject);
+    return this.subject;
   }
 
   getProduct(id: number): Product {
