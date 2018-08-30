@@ -16,6 +16,8 @@ import { ProductItemComponent } from "./main/products/products-list/product-item
 import { ProductAddComponent } from "./main/products/product-add/product-add.component";
 import { InvoicesListComponent } from "./main/documents/invoices-list/invoices-list.component";
 import { InvoiceAddComponent } from "./main/documents/invoices-list/invoice-add/invoice-add.component";
+import { AllegroComponent } from './main/allegro/allegro.component';
+import { AllegroSpyComponent } from './main/allegro/allegro-spy/allegro-spy.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { InvoiceAddComponent } from "./main/documents/invoices-list/invoice-add/
     ProductItemComponent,
     ProductAddComponent,
     InvoicesListComponent,
-    InvoiceAddComponent
+    InvoiceAddComponent,
+    AllegroComponent,
+    AllegroSpyComponent
   ],
   imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule, FormsModule],
   providers: [],

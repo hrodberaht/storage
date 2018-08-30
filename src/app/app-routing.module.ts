@@ -6,6 +6,8 @@ import { DocumentsComponent } from "./main/documents/documents.component";
 import { ProductDetailComponent } from "./main/products/product-detail/product-detail.component";
 import { ProductAddComponent } from "./main/products/product-add/product-add.component";
 import { InvoiceAddComponent } from "./main/documents/invoices-list/invoice-add/invoice-add.component";
+import { AllegroComponent } from "./main/allegro/allegro.component";
+import { AllegroSpyComponent } from "./main/allegro/allegro-spy/allegro-spy.component";
 
 const routes: Routes = [
   { path: "", component: MainComponent },
@@ -13,7 +15,9 @@ const routes: Routes = [
   { path: "products/add", component: ProductAddComponent },
   { path: "products/:id", component: ProductDetailComponent },
   { path: "documents", component: DocumentsComponent },
-  { path: "documents/invoices/add", component: InvoiceAddComponent }
+  { path: "documents/invoices/add", component: InvoiceAddComponent },
+  { path: "allegro", component: AllegroComponent },
+  { path: "allegro/spy", component: AllegroSpyComponent }
 ];
 
 @NgModule({
