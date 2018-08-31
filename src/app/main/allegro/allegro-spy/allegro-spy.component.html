@@ -1,6 +1,28 @@
-<form (ngSubmit)="onSubmit()" [formGroup]="search">
-  <input type="text" formControlName="productName">productName {{ search.value.productName }}
-  <input type="number" formControlName="ean">ean {{ search.value.ean }}
+<button type="button" (click)="onToggleAddToSpy()">Add product to spy</button>
+<div *ngIf="toggleAddToSpy">
+  <form (ngSubmit)="onSubmit()" [formGroup]="search">
+    Product name: <input type="text" formControlName="productName"> Ean: <input type="number" formControlName="ean">
 
-  <button type="submit">Submit</button>
-</form>
+    <button type="submit">Search</button>
+  </form>
+</div>
+<h2>Products to spy</h2>
+<ol>
+  <li *ngFor="let product of productsToSpy; let i = index">{{product.ean}}
+    <button type="button" (click)="onToggleShowAuctions()">Show auctions</button>
+    <button type="button" (click)="onToggleAddAuction()">Add auction to spy</button>
+    <div *ngIf="toggleAddAuction">
+      <div>
+        <form (ngSubmit)="onAddAuction(i)">
+          Auction id: <input type="text" [formControl]="auctionId">
+          <button type="submit">Add</button>
+        </form>
+      </div>
+    </div>
+    <div *ngIf="toggleShowAuctions">
+      <div *ngFor="let auction of product.auctions; let i = index">
+        {{i +1}}. {{auction.auctionId}}
+      </div>
+    </div>
+  </li>
+</ol>
