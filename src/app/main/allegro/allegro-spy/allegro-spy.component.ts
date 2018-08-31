@@ -29,12 +29,17 @@ export class AllegroSpyComponent implements OnInit {
     this.productsToSpy = this.allegroService.getProductsToSpy();
   }
 
-  onSubmit() {
-    console.log(this.search.value);
+  addProduct() {
+    this.allegroService.addProduct(this.search);
   }
 
-  onAddAuction(i) {
-    this.allegroService.addAuction(i, this.auctionId.value);
+  addAuction(indexOfProduct) {
+    this.allegroService.addAuction(indexOfProduct, this.auctionId.value);
+    this.auctionId.reset();
+  }
+
+  removeAuction(indexOfAuction, indexOfProduct) {
+    this.allegroService.removeAuction(indexOfAuction, indexOfProduct);
   }
 
   onToggleAddToSpy() {

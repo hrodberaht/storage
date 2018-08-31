@@ -38,6 +38,14 @@ export class ProductDataService {
     });
   }
 
+  getProductByEan(ean: number): Product {
+    return this.products.find((prod: any) => {
+      if (prod.ean === ean) {
+        return prod;
+      }
+    });
+  }
+
   addProduct(product: Product) {
     const id = { id: this.getLastId() };
     Object.assign(product, id);
