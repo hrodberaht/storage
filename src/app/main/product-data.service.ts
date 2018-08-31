@@ -11,19 +11,19 @@ export class ProductDataService {
   subject = new BehaviorSubject<Product[]>(this.products);
 
   constructor() {
-    setTimeout(() => {
-      this.subject.next(
-        (this.products = [
-          {
-            id: 13,
-            name: "RxJS",
-            ean: 45345345,
-            price: 12.5,
-            imgUrl: "string"
-          }
-        ])
-      );
-    }, 5000);
+    // setTimeout(() => {
+    //   this.subject.next(
+    //     (this.products = [
+    //       {
+    //         id: 13,
+    //         name: "RxJS",
+    //         ean: 45345345,
+    //         price: 12.5,
+    //         imgUrl: "string"
+    //       }
+    //     ])
+    //   );
+    // }, 5000);
   }
 
   getProducts() {
