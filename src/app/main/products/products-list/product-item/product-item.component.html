@@ -4,4 +4,5 @@
   <h3>Price: {{productItem.price | currency: 'PLN'}}</h3>
   <h5>Ean: {{productItem.ean}}</h5>
   <a [routerLink]="['/products',productItem.id]"><button>Details</button></a>
+  <a [routerLink]="['/allegro','spy']"><button>Add to allegro spy</button></a>
 </div>
