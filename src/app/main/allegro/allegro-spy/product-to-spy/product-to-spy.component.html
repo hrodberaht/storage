@@ -1,0 +1,16 @@
+<button type="button" (click)="onToggleShowAuctions()">
+  Show auctions</button>
+<button type="button" (click)="onToggleAddAuction()">Add auction to spy</button>
+<div *ngIf="toggleAddAuction">
+  <div>
+    <form (ngSubmit)="addAuction()">
+      Auction id: <input type="number" [formControl]="auctionId">
+      <button type="submit">Add</button>
+    </form>
+  </div>
+</div>
+<div *ngIf="toggleShowAuctions">
+  <div *ngFor="let auction of productToSpy.auctions; let indexOfAuction = index">
+    {{indexOfAuction +1}}. {{auction.auctionId}} <button type="button" (click)="removeAuction(indexOfAuction,indexOfProduct)">X</button>
+  </div>
+</div>

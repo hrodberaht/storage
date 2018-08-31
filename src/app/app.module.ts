@@ -18,6 +18,7 @@ import { InvoicesListComponent } from "./main/documents/invoices-list/invoices-l
 import { InvoiceAddComponent } from "./main/documents/invoices-list/invoice-add/invoice-add.component";
 import { AllegroComponent } from './main/allegro/allegro.component';
 import { AllegroSpyComponent } from './main/allegro/allegro-spy/allegro-spy.component';
+import { ProductToSpyComponent } from './main/allegro/allegro-spy/product-to-spy/product-to-spy.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AllegroSpyComponent } from './main/allegro/allegro-spy/allegro-spy.comp
     InvoicesListComponent,
     InvoiceAddComponent,
     AllegroComponent,
-    AllegroSpyComponent
+    AllegroSpyComponent,
+    ProductToSpyComponent
   ],
   imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule, FormsModule],
   providers: [],
