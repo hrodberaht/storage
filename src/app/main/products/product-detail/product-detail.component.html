@@ -4,6 +4,7 @@
   <h3>Price: {{productItem.price | currency: 'PLN'}}</h3>
   <h5>Ean: {{productItem.ean}}</h5>
   <button (click)="toggleEditingProduct()">Edit</button>
+  <a [routerLink]="['/products']"><button type="button">Back</button></a>
 </div>
 <div *ngIf="editingProduct">
   <img [src]="productItem.imgUrl" [alt]="productItem.name">
