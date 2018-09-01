@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ProductDataService } from "../../product-data.service";
 import { Product } from "../../shared/product.model";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { NgForm } from "@angular/forms";
 
 @Component({
@@ -14,7 +14,8 @@ export class ProductDetailComponent implements OnInit {
   editingProduct: boolean;
   constructor(
     private productDataService: ProductDataService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -34,5 +35,9 @@ export class ProductDetailComponent implements OnInit {
     this.productItem = form.value;
     this.productDataService.updateProduct(form.value, this.productItem.id);
     this.toggleEditingProduct();
+  }
+
+  gotoProducts() {
+    this.router.navigate(["/products"]);
   }
 }

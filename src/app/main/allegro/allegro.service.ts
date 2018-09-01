@@ -8,15 +8,15 @@ import { ProductDataService } from "../product-data.service";
 })
 export class AllegroService {
   productsToSpy: ProductsToSpy[] = PRODUCTS_TO_SPY;
-  constructor(private productsData: ProductDataService) {}
+  constructor(private productsData: ProductDataService) { }
 
   getProductsToSpy() {
     return this.productsToSpy;
   }
 
-  addProduct(search) {
-    if (search.value.ean) {
-      const product = this.productsData.getProductByEan(search.value.ean);
+  addProduct(ean) {
+    if (ean) {
+      const product = this.productsData.getProductByEan(ean);
       const productToSpy = {
         ean: product.ean,
         auctions: []

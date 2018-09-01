@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { AllegroService } from "../../allegro.service";
 import { FormControl } from "@angular/forms";
+import { ActivatedRoute } from "@angular/router";
+import { map } from 'rxjs/operators';
+
 
 @Component({
   selector: "app-product-to-spy",
@@ -15,14 +18,21 @@ export class ProductToSpyComponent implements OnInit {
 
   toggleShowAuctions: boolean;
   toggleAddAuction: boolean;
+  fragment: number;
+  ean;
 
   auctionId = new FormControl();
 
-  constructor(private allegroService: AllegroService) {}
+  constructor(private allegroService: AllegroService,
+  ) { }
 
   ngOnInit() {
     this.toggleShowAuctions = false;
     this.toggleAddAuction = false;
+
+
+
+
   }
 
   addAuction() {

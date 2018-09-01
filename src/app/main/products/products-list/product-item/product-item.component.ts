@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
+import { Router, NavigationExtras } from "@angular/router";
 
 @Component({
   selector: "app-product-item",
@@ -8,7 +9,17 @@ import { Component, OnInit, Input } from "@angular/core";
 export class ProductItemComponent implements OnInit {
   @Input()
   productItem;
-  constructor() {}
+  constructor(private router: Router) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
+
+  addToAllegroSpy() {
+    const nanigationExtras: NavigationExtras = {
+      queryParams: { ean: this.productItem.ean },
+      fragment: this.productItem.id
+    };
+    this.router.navigate(['/allegro/spy'],
+      nanigationExtras
+    );
+  }
 }
