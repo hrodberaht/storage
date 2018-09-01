@@ -19,6 +19,9 @@ import { InvoiceAddComponent } from "./main/documents/invoices-list/invoice-add/
 import { AllegroComponent } from './main/allegro/allegro.component';
 import { AllegroSpyComponent } from './main/allegro/allegro-spy/allegro-spy.component';
 import { ProductToSpyComponent } from './main/allegro/allegro-spy/product-to-spy/product-to-spy.component';
+import { OrdersComponent } from './main/orders/orders.component';
+import { OrdersListComponent } from './main/orders/orders-list/orders-list.component';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -37,10 +40,12 @@ import { ProductToSpyComponent } from './main/allegro/allegro-spy/product-to-spy
     InvoiceAddComponent,
     AllegroComponent,
     AllegroSpyComponent,
-    ProductToSpyComponent
+    ProductToSpyComponent,
+    OrdersComponent,
+    OrdersListComponent
   ],
-  imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

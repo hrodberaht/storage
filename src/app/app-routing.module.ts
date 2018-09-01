@@ -8,6 +8,8 @@ import { ProductAddComponent } from "./main/products/product-add/product-add.com
 import { InvoiceAddComponent } from "./main/documents/invoices-list/invoice-add/invoice-add.component";
 import { AllegroComponent } from "./main/allegro/allegro.component";
 import { AllegroSpyComponent } from "./main/allegro/allegro-spy/allegro-spy.component";
+import { OrdersComponent } from "./main/orders/orders.component";
+import { OrdersListComponent } from "./main/orders/orders-list/orders-list.component";
 
 const routes: Routes = [
   { path: "", component: MainComponent },
@@ -17,11 +19,12 @@ const routes: Routes = [
   { path: "documents", component: DocumentsComponent },
   { path: "documents/invoices/add", component: InvoiceAddComponent },
   { path: "allegro", component: AllegroComponent },
-  { path: "allegro/spy", component: AllegroSpyComponent }
+  { path: "allegro/spy", component: AllegroSpyComponent },
+  { path: "orders", component: OrdersComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
