@@ -2,6 +2,9 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryOrdersDataService } from "./main/orders/in-memory-orders-data.service";
+
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./header/header.component";
@@ -22,6 +25,7 @@ import { ProductToSpyComponent } from './main/allegro/allegro-spy/product-to-spy
 import { OrdersComponent } from './main/orders/orders.component';
 import { OrdersListComponent } from './main/orders/orders-list/orders-list.component';
 import { HttpClientModule } from "@angular/common/http";
+
 
 @NgModule({
   declarations: [
@@ -44,7 +48,9 @@ import { HttpClientModule } from "@angular/common/http";
     OrdersComponent,
     OrdersListComponent
   ],
-  imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule, FormsModule, HttpClientModule, HttpClientInMemoryWebApiModule.forRoot(
+    InMemoryOrdersDataService, { dataEncapsulation: false }
+  )],
   providers: [],
   bootstrap: [AppComponent]
 })
