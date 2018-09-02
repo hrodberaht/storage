@@ -1,3 +1,4 @@
+<input type="number" #searchTerm (keyup)="search(searchTerm)">
 <app-order-search></app-order-search>
 <p *ngFor="let order of orders$ | async">
-    Id: {{order.id }}, Price: {{order.price}}</p>
+    Id: {{order.id }}, Price: </p>

@@ -12,8 +12,6 @@ export class OrderSearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  search() {
-    console.log("hello");
-  }
+  
 
 }

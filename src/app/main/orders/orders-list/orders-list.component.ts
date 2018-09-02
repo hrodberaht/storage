@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdersDataService } from '../orders-data.service';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Order } from '../../shared/order.model';
 
 @Component({
@@ -9,11 +9,25 @@ import { Order } from '../../shared/order.model';
   styleUrls: ['./orders-list.component.css']
 })
 export class OrdersListComponent implements OnInit {
-  orders$: Observable<Order[]>
+  orders$: Observable<Order[]>;
+  searchTerm;
+  filteredOrders;
   constructor(private ordersData: OrdersDataService) { }
 
   ngOnInit() {
     this.orders$ = this.ordersData.getOrders();
+    this.searchTerm = new Subject();
+    this.searchTerm.subscribe((x) => {
+      this.filteredOrders = this.ordersData.getOrderById(x.value)
+      // .subscribe( x =>{
+      //   this.filteredOrders = x
+      //   console.log(this.filteredOrders)
+      // });
+      
+    })
   }
 
+  search(searchTerm) {
+    this.searchTerm.next(searchTerm);
+  }
 }
