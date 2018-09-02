@@ -4,6 +4,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryOrdersDataService } from "./main/orders/in-memory-orders-data.service";
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -50,7 +52,7 @@ import { OrderSearchComponent } from './main/orders/orders-list/order-search/ord
     OrdersListComponent,
     OrderSearchComponent
   ],
-  imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule, FormsModule, HttpClientModule, HttpClientInMemoryWebApiModule.forRoot(
+  imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule, FormsModule, HttpClientModule, MatButtonModule, MatCheckboxModule, HttpClientInMemoryWebApiModule.forRoot(
     InMemoryOrdersDataService, { dataEncapsulation: false }
   )],
   providers: [],
