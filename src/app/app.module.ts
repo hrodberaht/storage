@@ -25,6 +25,7 @@ import { ProductToSpyComponent } from './main/allegro/allegro-spy/product-to-spy
 import { OrdersComponent } from './main/orders/orders.component';
 import { OrdersListComponent } from './main/orders/orders-list/orders-list.component';
 import { HttpClientModule } from "@angular/common/http";
+import { OrderSearchComponent } from './main/orders/orders-list/order-search/order-search.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { HttpClientModule } from "@angular/common/http";
     AllegroSpyComponent,
     ProductToSpyComponent,
     OrdersComponent,
-    OrdersListComponent
+    OrdersListComponent,
+    OrderSearchComponent
   ],
   imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule, FormsModule, HttpClientModule, HttpClientInMemoryWebApiModule.forRoot(
     InMemoryOrdersDataService, { dataEncapsulation: false }

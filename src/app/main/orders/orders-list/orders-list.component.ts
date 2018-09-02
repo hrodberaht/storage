@@ -9,11 +9,11 @@ import { Order } from '../../shared/order.model';
   styleUrls: ['./orders-list.component.css']
 })
 export class OrdersListComponent implements OnInit {
-  orders: Observable<Order[]>
+  orders$: Observable<Order[]>
   constructor(private ordersData: OrdersDataService) { }
 
   ngOnInit() {
-    this.orders = this.ordersData.getOrders();
+    this.orders$ = this.ordersData.getOrders();
   }
 
 }

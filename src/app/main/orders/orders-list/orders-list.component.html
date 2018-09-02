@@ -1,1 +1,3 @@
-<p *ngFor="let order of orders | async ">{{order.id }}</p>
+<app-order-search></app-order-search>
+<p *ngFor="let order of orders$ | async">
+    Id: {{order.id }}, Price: {{order.price}}</p>
