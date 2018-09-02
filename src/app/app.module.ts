@@ -4,7 +4,11 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryOrdersDataService } from "./main/orders/in-memory-orders-data.service";
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+
+import {MatButtonModule, MatCheckboxModule, MatInputModule} from '@angular/material';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 
 
 import { AppRoutingModule } from "./app-routing.module";
@@ -30,6 +34,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { OrderSearchComponent } from './main/orders/orders-list/order-search/order-search.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +57,17 @@ import { OrderSearchComponent } from './main/orders/orders-list/order-search/ord
     OrdersListComponent,
     OrderSearchComponent
   ],
-  imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule, FormsModule, HttpClientModule, MatButtonModule, MatCheckboxModule, HttpClientInMemoryWebApiModule.forRoot(
+  imports: [BrowserModule, 
+    ReactiveFormsModule, 
+    AppRoutingModule, 
+    FormsModule, 
+    HttpClientModule,
+    BrowserAnimationsModule, 
+    MatButtonModule,
+    MatFormFieldModule, 
+    MatInputModule,
+    MatCheckboxModule, 
+    HttpClientInMemoryWebApiModule.forRoot(
     InMemoryOrdersDataService, { dataEncapsulation: false }
   )],
   providers: [],
