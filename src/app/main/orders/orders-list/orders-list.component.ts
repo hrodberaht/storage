@@ -11,19 +11,20 @@ import { Order } from '../../shared/order.model';
 export class OrdersListComponent implements OnInit {
   orders$: Observable<Order[]>;
   searchTerm;
-  filteredOrders;
+  filteredOrders: any;
   constructor(private ordersData: OrdersDataService) { }
 
   ngOnInit() {
+    this.filteredOrders = [];
     this.orders$ = this.ordersData.getOrders();
     this.searchTerm = new Subject();
     this.searchTerm.subscribe((x) => {
-      this.filteredOrders = this.ordersData.getOrderById(x.value)
-      // .subscribe( x =>{
-      //   this.filteredOrders = x
-      //   console.log(this.filteredOrders)
-      // });
-      
+      this.ordersData.getOrderById(x.value)
+        .subscribe(x => {
+          this.filteredOrders = x
+          console.log(this.filteredOrders)
+        });
+
     })
   }
 

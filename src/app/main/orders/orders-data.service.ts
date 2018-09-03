@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-import { catchError, tap, map, filter } from 'rxjs/operators';
+import { catchError, tap, map, filter, take } from 'rxjs/operators';
 
 import { Order } from '../shared/order.model';
 
@@ -27,14 +27,15 @@ export class OrdersDataService {
       )
   }
 
-  getOrderById(id){
+  getOrderById(id) {
     return this.http.get<Order[]>(this.ordersUrl)
-    .pipe(
-      filter((data) =>{
-        console.log(data[1].id)
-        console.log(id)
-        return data[1].id === id;
-      }
-    )).subscribe(x => console.log(x));
+      .pipe(
+        map((order) => {
+          return order.filter((serchedOrder) => {
+            if (serchedOrder.id == id)
+              return order;
+          })
+        })
+      )
   }
 }
