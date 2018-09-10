@@ -4,4 +4,5 @@ export class Product {
   ean: number;
   price: number;
   imgUrl: string;
+  quantity: number;
 }

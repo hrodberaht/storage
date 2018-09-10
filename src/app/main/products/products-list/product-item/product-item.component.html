@@ -3,6 +3,7 @@
   <h2>{{productItem.name}}</h2>
   <h3>Price: {{productItem.price | currency: 'PLN'}}</h3>
   <h5>Ean: {{productItem.ean}}</h5>
+  <h3>Quantity: {{productItem.quantity}}</h3>
   <a [routerLink]="['/products',productItem.id]"><button>Details</button></a>
   <button (click)="addToAllegroSpy()">Add to allegro spy</button>
 </div>
