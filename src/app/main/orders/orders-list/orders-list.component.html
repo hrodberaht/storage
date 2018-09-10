@@ -1,12 +1,15 @@
+<p><button type="button" (click)="shwoOrderForm()">Add order</button></p>
+<div *ngIf="show">
+     
+</div>
 <input type="number" #searchTerm (keyup)="search(searchTerm)">
 <app-order-search></app-order-search>
 
 <div *ngIf="filteredOrders.length == 0">
-    <p *ngFor="let order of orders$ | async">
-        Id: {{order.id }}, Price: </p>
+    <p *ngFor="let order of orders$ | async; let i = index">
+        Id: {{order.id }}, Price: <button (click)="addToOrder(order.id)">Add product to order</button></p>
 </div>
 <div *ngIf="true">
-    Filtred orders
     <p *ngFor="let order of filteredOrders">
         Id: {{order.id }}, Price: </p>
 </div>
