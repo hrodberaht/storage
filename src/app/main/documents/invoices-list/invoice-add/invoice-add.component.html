@@ -2,5 +2,18 @@
   Supllier:
   <input type="text" id="supplier" formControlName="supplier"> Number:
   <input type="text" id="invoiceNumber" formControlName="invoiceNumber">
+  <input type="date" id="date" formControlName="date">
+  <button type="button" (click)="addProduct()">Add product</button>
+  <div formArrayName="products">
+    <div *ngFor="let product of productsForms.controls; let i = index" [formGroupName] ="i">
+      <input type="text" formControlName="ean">
+      <input type="text" formControlName="name">
+      <input type="text" formControlName="quantity">
+      <button type="button" (click)="deleteProduct(i)">X</button>
+    </div>
+    
+
+  </div>
+
   <button type="submit">Save</button>
 </form>
