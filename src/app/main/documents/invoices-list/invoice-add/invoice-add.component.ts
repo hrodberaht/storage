@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
+import { ProductDataService } from '../../../product-data.service';
 
 @Component({
   selector: 'app-invoice-add',
@@ -9,7 +10,8 @@ import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 export class InvoiceAddComponent implements OnInit {
   invoiceForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,
+    private productData:  ProductDataService) {}
 
   ngOnInit() {
     this.invoiceForm = this.fb.group({
@@ -25,7 +27,9 @@ export class InvoiceAddComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.invoiceForm);
+    this.productsForms.controls.map(product => {
+      this.productData.getProductByEan(product.value.ean).quantity += product.value.quantity;
+    });
   }
 
   addProduct() {
@@ -34,12 +38,18 @@ export class InvoiceAddComponent implements OnInit {
       name: [],
       quantity: []
     });
-    console.log(product);
 
     this.productsForms.push(product);
   }
 
   deleteProduct(i) {
     this.productsForms.removeAt(i);
+  }
+
+  findProduct(i) {
+    const product = this.productsForms.controls[i].value;
+    const prod = this.productData.getProductByEan(product.ean);
+    this.productsForms.controls[i].patchValue({name: prod.name});
+    console.log(prod);
   }
 }
